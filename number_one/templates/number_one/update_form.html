@@ -1,0 +1,22 @@
+{% extends 'number_one/my_base.html' %}
+
+{% block content %}
+
+<div class="col-sm-6">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h2 class="panel-title">enter someone new</h2>
+        </div>
+        <div class="panel-body">
+            <form action="{% url 'models_practice:save_update' %}" method="post">
+                {% csrf_token %}
+                {{ update.as_p }}
+                <input type="hidden" name="id" value={{ person_nn_id }}>
+                <button type="submit" class="btn btn-lg btn-info">submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

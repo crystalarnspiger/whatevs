@@ -23,6 +23,9 @@
                         <tr>
                             <td>{{ person.name }}</td>
                             <td>{{ person.nn_id }}</td>
+                            <td><a href="{% url 'models_practice:enter_update' id=person.nn_id %}">
+                                Edit Name
+                            </a></td>
                         </tr>
                         </tbody>
                     {% endfor %}
