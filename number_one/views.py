@@ -6,7 +6,7 @@ from django.conf import settings
 from number_one import forms, models, utilities
 
 
-@utilities.audit_error
+# @utilities.audit_error
 def models_practice(request):
     greeting = 'practice'
     manage_people = forms.PersonForm
@@ -33,7 +33,6 @@ def new_person(request):
         }
         return render(request, 'number_one/error.html', context)
 
-
     return redirect('models_practice:practice')
 
 
@@ -43,8 +42,6 @@ def update_person(request, nn_id=''):
     context = {
         'person_name': person.name
     }
-
-
 
     return redirect('models_practice:practice')
 
